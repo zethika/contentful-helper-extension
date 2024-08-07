@@ -1,0 +1,15 @@
+<template>
+    <svg v-if="icon === 'chevron-double-up'" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 18.75 7.5-7.5 7.5 7.5" />
+        <path stroke-linecap="round" stroke-linejoin="round" d="m4.5 12.75 7.5-7.5 7.5 7.5" />
+    </svg>
+    <svg v-else-if="icon === 'crosshairs'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor"><!--!Font Awesome Pro 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc.--><path d="M272 0l0 16 0 48.7c93.3 7.7 167.6 82.1 175.3 175.3l48.7 0 16 0 0 32-16 0-48.7 0c-7.7 93.3-82.1 167.6-175.3 175.3l0 48.7 0 16-32 0 0-16 0-48.7C146.7 439.6 72.4 365.3 64.7 272L16 272 0 272l0-32 16 0 48.7 0C72.4 146.7 146.7 72.4 240 64.7L240 16l0-16 32 0zM96 256a160 160 0 1 0 320 0A160 160 0 1 0 96 256zm224 0a64 64 0 1 0 -128 0 64 64 0 1 0 128 0zm-160 0a96 96 0 1 1 192 0 96 96 0 1 1 -192 0z"/></svg>
+    <svg v-else-if="icon === 'cog'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" fill="currentColor" stroke="currentColor"><!--!Font Awesome Pro 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc.--><path d="M195 108c-13.2 5.4-25.5 12.6-36.7 21.2l-13.3 10.2-16-5.1-52-16.6L46.9 170.2l40.3 36.7 12.4 11.3-2.2 16.6c-.9 6.9-1.4 14-1.4 21.2s.5 14.3 1.4 21.2l2.2 16.6L87.2 305.1 46.9 341.8l30.2 52.4 52-16.6 16-5.1 13.3 10.2c11.2 8.6 23.5 15.8 36.7 21.2l15.5 6.4 3.6 16.4L225.8 480l60.5 0 11.7-53.3 3.6-16.4L317 404c13.2-5.4 25.5-12.6 36.7-21.2l13.3-10.2 16 5.1 52 16.6 30.2-52.4-40.3-36.7-12.4-11.3 2.2-16.6c.9-6.9 1.4-14 1.4-21.2s-.5-14.3-1.4-21.2l-2.2-16.6 12.4-11.3 40.3-36.7-30.2-52.4-52 16.6-16 5.1-13.3-10.2c-11.2-8.6-23.5-15.8-36.7-21.2l-15.5-6.4-3.6-16.4L286.2 32l-60.5 0L214.1 85.3l-3.6 16.4L195 108zM200 0L312 0l17.2 78.4c15.8 6.5 30.6 15.1 44 25.4l76.5-24.4 56 97-59.4 54.1c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l59.4 54.1-56 97-76.5-24.4c-13.4 10.3-28.2 18.9-44 25.4L312 512l-112 0-17.2-78.4c-15.8-6.5-30.6-15.1-44-25.4L62.3 432.5l-56-97 59.4-54.1C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L6.3 176.5l56-97 76.5 24.4c13.4-10.3 28.2-18.9 44-25.4L200 0zM312 256a56 56 0 1 0 -112 0 56 56 0 1 0 112 0zm-144 0a88 88 0 1 1 176 0 88 88 0 1 1 -176 0z"/></svg>
+    <svg v-else-if="icon === 'check'" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"  fill="currentColor" stroke="currentColor"><!--!Font Awesome Pro 6.6.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2024 Fonticons, Inc.--><path d="M441 103c9.4 9.4 9.4 24.6 0 33.9L177 401c-9.4 9.4-24.6 9.4-33.9 0L7 265c-9.4-9.4-9.4-24.6 0-33.9s24.6-9.4 33.9 0l119 119L407 103c9.4-9.4 24.6-9.4 33.9 0z"/></svg>
+</template>
+
+<script setup lang="ts">
+defineProps<{
+    icon: 'chevron-double-up'|'crosshairs'|'cog'|'check'
+}>()
+</script>

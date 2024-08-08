@@ -30,14 +30,12 @@ export const useDataSetsStore = defineStore('dataSets', {
         },
         updateValidNodes(){
             // Remove elements which have been removed from the dom in the meantime
-            Object.keys(this.nodesMap).forEach(key => {
-                const el: NodesMapType  = this.nodesMap[key];
-                if(el.node.parentNode === null)
-                {
-                    el.node.removeAttribute('data-ctf-managed-id')
+            Object.keys(this.nodesMap).forEach(nodeId => {
+                if(document.querySelector('[data-ctf-set-space="'+nodeId+'"]') === null){
+                    const el: NodesMapType  = this.nodesMap[nodeId];
                     el.node.removeEventListener('mouseenter',el.cbEnter);
                     el.node.removeEventListener('mouseleave',el.cbLeave);
-                    delete this.nodesMap[key]
+                    delete this.nodesMap[nodeId]
                 }
             })
 

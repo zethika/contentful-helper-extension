@@ -73,6 +73,10 @@ whenever(keys.escape, () => {
         dataStore.selectedId = null;
     }
 })
+const shiftS = keys['Shift+S'];
+whenever(shiftS, () => {
+    sysStore.isSelectingNode = true;
+})
 
 window.navigation.addEventListener("navigate", () => {
     let attempts = 0;

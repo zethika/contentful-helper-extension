@@ -35,7 +35,11 @@ const link = computed(() => {
         previousPart = '?previousEntries='+parentIds.join(',');
     }
 
-    return 'https://app.contentful.com/spaces/'+dataset.value.space+'/entries/'+dataset.value.id+previousPart;
+    let environmentPart = '';
+    if(dataset.value.environment !== null)
+        environmentPart = '/environments/'+dataset.value.environment
+
+    return 'https://app.contentful.com/spaces/'+dataset.value.space+environmentPart+'/entries/'+dataset.value.id+previousPart;
 })
 
 </script>

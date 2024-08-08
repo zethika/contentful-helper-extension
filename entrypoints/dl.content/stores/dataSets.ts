@@ -1,6 +1,6 @@
 import {defineStore} from "pinia";
 
-export interface DatasetType { space: string, type: string, id: string }
+export interface DatasetType { space: string, type: string, id: string, environment: string|null }
 export interface NodesMapType { cbEnter: (event: MouseEvent) => void,cbLeave: (event: MouseEvent) => void, id: string, node: HTMLElement, set: DatasetType }
 
 export const useDataSetsStore = defineStore('dataSets', {
@@ -43,6 +43,7 @@ export const useDataSetsStore = defineStore('dataSets', {
                 if(node.hasAttribute('data-ctf-managed-id'))
                     return;
 
+                let environment: string|null = node.getAttribute('data-ctf-set-environment');
                 const space = node.getAttribute('data-ctf-set-space');
                 const type = node.getAttribute('data-ctf-set-type');
                 const id = node.getAttribute('data-ctf-set-id');
@@ -81,6 +82,7 @@ export const useDataSetsStore = defineStore('dataSets', {
                         }
                     },
                     set: {
+                        environment,
                         space,
                         type,
                         id

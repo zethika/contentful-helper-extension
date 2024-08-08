@@ -31,7 +31,7 @@ export const useDataSetsStore = defineStore('dataSets', {
         updateValidNodes(){
             // Remove elements which have been removed from the dom in the meantime
             Object.keys(this.nodesMap).forEach(nodeId => {
-                if(document.querySelector('[data-ctf-set-space="'+nodeId+'"]') === null){
+                if(document.querySelector('[data-ctf-managed-id="'+nodeId+'"]') === null){
                     const el: NodesMapType  = this.nodesMap[nodeId];
                     el.node.removeEventListener('mouseenter',el.cbEnter);
                     el.node.removeEventListener('mouseleave',el.cbLeave);

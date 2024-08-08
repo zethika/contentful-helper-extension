@@ -1,6 +1,6 @@
 <template>
     <div class="absolute pointer-events-none z-[99998] transition-all" :style="position">
-        <div class="absolute inset-y-2 inset-x-1" :class="wrapperClasses">
+        <div class="absolute" :class="wrapperClasses">
             <slot/>
         </div>
     </div>

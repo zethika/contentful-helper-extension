@@ -62,14 +62,35 @@ browser.runtime.onMessage.addListener((message, sender, sendResponse) => {
 
 const keys = useMagicKeys()
 whenever(keys.escape, () => {
-    if(sysStore.isSelectingNode)
+    if(sysStore.isSelectingNode )
     {
         sysStore.isSelectingNode = false;
     }
-    else if (sysStore.detailsOpen)
+    else
     {
         sysStore.detailsOpen = false;
+        dataStore.hoveringId = null;
+        dataStore.selectedId = null;
     }
+})
+
+window.navigation.addEventListener("navigate", () => {
+    let attempts = 0;
+    const interval = setInterval(() => {
+        if(dataStore.selectedNodeMap !== null && document.querySelector('[data-ctf-managed-id="'+dataStore.selectedNodeMap.id+'"]') === null){
+            dataStore.selectedId = null;
+            sysStore.detailsOpen = false;
+            clearInterval(interval)
+        }
+        else if(attempts > 10)
+        {
+            clearInterval(interval)
+        }
+        else
+        {
+            attempts++;
+        }
+    },100)
 })
 
 

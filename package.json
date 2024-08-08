@@ -2,7 +2,7 @@
   "name": "contentful-helper-extension",
   "description": "A helper extension for working with contentful-powered websites",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.3.0",
   "type": "module",
   "scripts": {
     "dev": "wxt",
